@@ -80,15 +80,19 @@ class almacen(): # Aqui obte por crear una clase para todas las funciones del al
         self.productos.append(portatiles(pantalla, ram, almcenamiento, precio_compra))
         
     def mostrar(self): # muestro los datos
-        for i in self.productos: # recorro mi lista con una ciclo for
-            print(i.mostrar_datos())
-            print("----------------")
+        if not self.productos:
+            print("No hay productos")
+        else:
+            for i in self.productos: # recorro mi lista con una ciclo for
+                print(i.mostrar_datos())
+                print("----------------")
             
     # El menu que da una interfaz para que el usuario interactue   
     def menu(self):
         while True:
-            print("----------------")
+            print("---------------------")
             print("Bienvenido")
+            print("---------------------")
             print("1. Ingresar Celular")
             print("2. Ingresar Tablet")
             print("3. Ingresar Portatil")

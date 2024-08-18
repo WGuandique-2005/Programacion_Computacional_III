@@ -42,12 +42,19 @@ class veterinaria(): # clase que nos permitira realizar todas las opciones (opci
         self.perros.append(perro(nombre, raza, edad, peso))
         
     def mostrar(self): # funcion que muestra los datos
-        for i in self.perros: # recorre la lista con un for
-            print("-----------------------")
-            print(i.mostrar_datos()) # y llamo a la funcion de la clase perro
+        if not self.perros:
+            print("No hay perros registrados")
+        else:
+            for i in self.perros: # recorre la lista con un for
+                print("-----------------------")
+                print(i.mostrar_datos()) # y llamo a la funcion de la clase perro
+            
     
     def menu(self): # funcion que cumple el papel de menu
         while True:
+            print("----------------------")
+            print("BIENVENIDO")
+            print("----------------------")
             print("1. Registrar perro")
             print("2. Mostrar perros")
             print("3. Salir")

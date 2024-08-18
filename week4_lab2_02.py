@@ -55,13 +55,18 @@ class papeleria(): # Aqui obte por crear una clase para todas las funciones de l
         self.articulos.append(lapiz(tipo, precio_compra))
         
     def mostrar_articulos(self): # muestra los datos almacenado en la lista previamente creada
-        for i in self.articulos: # con un for recorro toda la lista
-            print(i.mostrar_datos()) # y llamo a la funcion mostrar datos que esta en la clases (cuaderno/lapiz)
-            print("_______________")
-            
+        if not self.articulos:
+            print("No hay articulos registrados")
+        else:
+            for i in self.articulos: # con un for recorro toda la lista
+                print(i.mostrar_datos()) # y llamo a la funcion mostrar datos que esta en la clases (cuaderno/lapiz)
+                print("_______________")
+                
     def menu(self): # Un menu para la intefaz de usuario
         while True:
+            print("---------------------")
             print("Bienvenido \n")
+            print("---------------------")
             print("1. Registrar cuaderno")
             print("2. Registrar lapiz")
             print("3. Mostrar articulos")

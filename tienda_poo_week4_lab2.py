@@ -21,7 +21,7 @@ class producto:
         print(f"Total: {self.impuestos}")
 
 # Creo una clase tienda, para definir las funciones que tendre disponible en mi tienda (menu,ingresar prodcutos, mostrarlos y comprar)
-class Tienda:
+class tienda:
     def __init__(self): # Aqui el constructor de esta clase
         self.my_stock = {} # un diccionario para almacenar mi stock de la tienda
         self.productos_comprados = []  # una lista para mis productos comprados, y posiblemente mostrar un resumen de la compra que se realice
@@ -37,9 +37,12 @@ class Tienda:
         print(f"producto {nombre} agregado al inventario.") # mensaje para indicar que el producto fue ingresado
 
     def mostrar_stock(self): # funcion para mostrar los datos
-        for key, value in self.my_stock.items(): # recorro mi diccionario con un for
-            print(f"Nombre: {value['nombre']}, Precio: {value['precio']}, Cantidad: {value['cantidad']}") # muestro los datos
-            print("--------------------------------------------")
+        if not self.my_stock:
+            print("No hay productos en el inventario")
+        else:
+            for key, value in self.my_stock.items(): # recorro mi diccionario con un for
+                print(f"Nombre: {value['nombre']}, Precio: {value['precio']}, Cantidad: {value['cantidad']}") # muestro los datos
+                print("--------------------------------------------")
 
     def comprar(self): # funcion para mostrar los productos 
         nombre = input("Ingrese el nombre del producto: ") # solicitamos el nombre o la key del producto
@@ -71,13 +74,16 @@ class Tienda:
 
     def menu(self): # el menu
         while True:
+            print("---------------------")
+            print("BIENVENIDO")
+            print("---------------------")
             print("\nMenu:")
             print("1. Ingresar productos")
             print("2. Mostrar stock")
             print("3. Comprar")
             print("4. Salir")
             print("------------------------")
-            opcion = input("Ingrese la opcion: ") # opcion ayuda al usuario a esocger que hacer
+            opcion = input("Ingrese una opcion: ") # opcion ayuda al usuario a esocger que hacer
             match opcion: # matcheo esa opcion, para ejecutar una sentencia dependiendo el caso
                 case "1": # caso uno, ingresar productos
                     print("------------------------")
@@ -97,5 +103,5 @@ class Tienda:
                     print("Opcion invalida. Por favor, ingrese una opcion valida.")
                     continue # continuar ejecutando el menu, si la opcion no es valida
                 
-tienda = Tienda() # Almaceno la clase en una variable
-Tienda.menu() # llamo a la funcion que funge la forma de menu de manera que el usuario pueda realizar las acciones que este contiene
+tienda = tienda() # Almaceno la clase en una variable
+tienda.menu() # llamo a la funcion que funge la forma de menu de manera que el usuario pueda realizar las acciones que este contiene

@@ -37,18 +37,23 @@ class consecionario(): # define una clase, pero principalmente para que almacene
         self.carros.append(carro(marca, modelo, año, color, tipo_combustible, precio_compra))
     
     def mostrar(self):
-        for i in self.carros:
-            print(i.mostrar_datos())
-            print("________________")
+        if not self.carros:
+            print("No hay carros registrados")
+        else:
+            for i in self.carros:
+                print(i.mostrar_datos())
+                print("________________")
     
 # Aqui una funcion que actue como menu
     def menu(self):
         while True:
+            print("---------------------")
             print("Bienvenido")
             print("---------------------")
             print("1. Registrar un carro")
             print("2. Mostrar los carros")
             print("3. Salir")
+            print("---------------------")
             op = input("Escoja una opcion: ") # op para que el usuario decida que hacer
             match op: # uso un match case, matcheo a op, para que dependiendo el caso se ejecute la debida sentencia
                 case "1":
