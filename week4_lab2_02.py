@@ -56,7 +56,7 @@ class papeleria(): # Aqui obte por crear una clase para todas las funciones de l
         
     def mostrar_articulos(self): # muestra los datos almacenado en la lista previamente creada
         if not self.articulos:
-            print("No hay articulos registrados")
+            print("No hay articulos registrados \nPor favor ingrese articulos")
         else:
             for i in self.articulos: # con un for recorro toda la lista
                 print(i.mostrar_datos()) # y llamo a la funcion mostrar datos que esta en la clases (cuaderno/lapiz)

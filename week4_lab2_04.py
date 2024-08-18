@@ -81,7 +81,7 @@ class almacen(): # Aqui obte por crear una clase para todas las funciones del al
         
     def mostrar(self): # muestro los datos
         if not self.productos:
-            print("No hay productos")
+            print("No hay productos \nPor favor ingrese algun producto")
         else:
             for i in self.productos: # recorro mi lista con una ciclo for
                 print(i.mostrar_datos())

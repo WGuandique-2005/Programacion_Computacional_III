@@ -38,7 +38,7 @@ class consecionario(): # define una clase, pero principalmente para que almacene
     
     def mostrar(self):
         if not self.carros:
-            print("No hay carros registrados")
+            print("No hay carros registrados \nIngrese algun carro, por favor")
         else:
             for i in self.carros:
                 print(i.mostrar_datos())

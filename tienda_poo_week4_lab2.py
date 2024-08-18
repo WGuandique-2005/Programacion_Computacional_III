@@ -38,7 +38,7 @@ class tienda:
 
     def mostrar_stock(self): # funcion para mostrar los datos
         if not self.my_stock:
-            print("No hay productos en el inventario")
+            print("No hay productos en el inventario \nReabastezca el Inventario")
         else:
             for key, value in self.my_stock.items(): # recorro mi diccionario con un for
                 print(f"Nombre: {value['nombre']}, Precio: {value['precio']}, Cantidad: {value['cantidad']}") # muestro los datos

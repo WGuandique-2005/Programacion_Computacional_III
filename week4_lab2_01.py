@@ -43,7 +43,7 @@ class veterinaria(): # clase que nos permitira realizar todas las opciones (opci
         
     def mostrar(self): # funcion que muestra los datos
         if not self.perros:
-            print("No hay perros registrados")
+            print("No hay perros registrados \nIntente ingresar datos")
         else:
             for i in self.perros: # recorre la lista con un for
                 print("-----------------------")
@@ -77,7 +77,7 @@ class veterinaria(): # clase que nos permitira realizar todas las opciones (opci
                     break # termina el programa
                 case _:
                     print("-----------------------")
-                    print("Opcion invalida")
+                    print("Opcion invalida, ingrese una opcion valida")
                     continue # esto permite que aunque falle el programa, no surja error, sino que le permita al usuario poner una opcion validad
 veterinaria = veterinaria() # almacenamos en una variable a la clase
 veterinaria.menu() # llamamos al menu que es nuestar interfaz para comunicarnos con el usuario
